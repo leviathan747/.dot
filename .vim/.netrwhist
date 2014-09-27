@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/levistarrett/git/geui/application/httpcomm'
+let g:netrw_dirhist_2='/Users/levistarrett/sock_test/agent'
+let g:netrw_dirhist_3='/Users/levistarrett/sock_chat'
+let g:netrw_dirhist_4='/Users/levistarrett/git/geui/application/agent'
+let g:netrw_dirhist_5='/Users/levistarrett/git/geui/application/js/client/config'
+let g:netrw_dirhist_6='/Users/levistarrett/git/geui/application/httpcomm'
+let g:netrw_dirhist_7='/Users/levistarrett/git/geui/application/eicomm'

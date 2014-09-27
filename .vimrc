@@ -1,0 +1,85 @@
+set nocompatible        " Use Vim defaults instead of 100% vi compatibility
+set backspace=indent,eol,start  " more powerful backspacing
+
+" set up pathogen.vim
+execute pathogen#infect()
+
+syntax on
+set visualbell
+set smartindent
+set nobackup
+set shiftwidth=4
+set softtabstop=4
+set ruler
+set background=dark
+set expandtab
+set hlsearch
+set number
+"set textwidth=69
+"colors darkblue
+"let highlight_function_name = 1
+
+" my mappings
+map J :5winc +<CR>
+map K :5winc -<CR>
+map tn :tabe<CR>
+map th :tabn<CR>
+map tp :tabp<CR>
+map nt :NERDTreeToggle<CR>
+map <Tab> <C-w>w
+map zz <C-z>
+
+let NERDTreeIgnore = ['\.pyc$']
+"let NERDTreeIgnore += ['\.class$']
+
+" render ejs as html
+au BufNewFile,BufRead *.ejs set filetype=html
+
+if has ("autocmd")
+    " set wrap for emails at 70, but source code doesn't wrap
+    au BufRead   ae*.txt set textwidth=70
+    au VimEnter  ae*.txt set lines=36
+    "au BufEnter  ae*.txt startinsert
+    au BufEnter  ae*.txt set textwidth=70
+    au BufLeave  ae*.txt set textwidth=0
+    " don't want to expand tabs for makefiles or greenhills build files
+    au BufRead   makefile,*.bld set noexpandtab
+    au BufEnter  makefile,*.bld set noexpandtab
+    au BufLeave  makefile,*.bld set expandtab
+    " short width stuff for CVS checkins, so that the edit history
+    " doesn't wrap in $Log
+    au BufRead   c:/temp/[0-9]\+ set textwidth=70
+    au VimEnter  c:/temp/[0-9]\+ set lines=20
+    au BufEnter  c:/temp/[0-9]\+ set textwidth=70
+    au BufEnter  c:/temp/[0-9]\+ startinsert
+    au BufLeave  c:/temp/[0-9]\+ set textwidth=0
+endif
+
+
+if &diff
+noremap <space> ]cz.
+noremap <S-space> [cz.
+windo set foldlevel=999999
+execute "normal \<c-w>\<c-w>"
+noremap <C-L> :diffupdate<CR><C-L>
+endif
+
+
+" vimdiff for CVS
+command -nargs=1 CVSdiff silent call CVSdiff("%", "<args>")
+function! CVSdiff(filename, cvsversion)
+  " append a:filename to keep extension and therefore highlighting mode
+  let patchname = tempname() . a:filename
+  let tempname = tempname() . a:filename
+  let newname = tempname() . a:filename
+  execute "!cvs diff -a -r " . a:cvsversion . " " . a:filename . " > " . patch
+  execute "!cp " . a:filename . " " . tempname
+  execute "!patch -R -o " . newname . " " . tempname . " < " . patchname
+  execute "vertical diffsplit " . newname
+  call delete(patchname)
+  call delete(tempname)
+  call delete(newname)
+endfunction
+
+" make space get rid of highlighting
+nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
