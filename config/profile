@@ -112,10 +112,11 @@ alias h='history'
 alias vi='vim'
 alias please='sudo'
 
-alias bashrc='vim ~/git/dot/config/bashrc'
-alias profile='vim ~/git/dot/config/profile'
-alias vimrc='vim ~/git/dot/config/vimrc'
-alias gitconfig='vim ~/git/dot/config/gitconfig'
+# .dot setup
+alias bashrc='vim ~/.dot/config/bashrc'
+alias profile='vim ~/.dot/config/profile'
+alias vimrc='vim ~/.dot/config/vimrc'
+alias gitconfig='vim ~/.dot/config/gitconfig'
 
 # Add android sdk to PATH
 export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/tools
