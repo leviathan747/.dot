@@ -23,3 +23,5 @@ mv ${INSTALL_DIR}/backup/.vim ~
 # source profile and bashrc
 source ~/.profile
 source ~/.bashrc
+
+echo Uninstall finished.
