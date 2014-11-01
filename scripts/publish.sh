@@ -4,6 +4,9 @@
 # variables
 INSTALL_DIR='.dot/'
 
+# check argument
+[ $# -eq 1 ] || { echo Wrong number of arguments. Aborting...; exit 1 }
+
 # change directories
 cd
 cd ${INSTALL_DIR}
