@@ -118,3 +118,5 @@ alias gitconfig='vim ~/.gitconfig'
 # Add android sdk to PATH
 export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/tools
 export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
+
+echo Welcome Levi
