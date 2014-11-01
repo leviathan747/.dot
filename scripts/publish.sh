@@ -12,7 +12,7 @@ cd ${INSTALL_DIR}
 bash scripts/package.sh
 
 # commit to master
-git add .
+git add config/ dist/
 git commit -m "$1"
 git push origin master
 
