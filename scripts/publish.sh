@@ -37,7 +37,7 @@ git show master:dist/dot.tgz > dot.tgz
 [ $? -eq 0 ] || abort
 
 # commit
-git add .
+git add dot.tgz
 [ $? -eq 0 ] || abort
 git commit -m "Updated distribution from `git show-ref -s --abbrev --heads master`"
 [ $? -eq 0 ] || abort
