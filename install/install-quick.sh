@@ -31,11 +31,11 @@ if [ $? -ne 0 ]; then { echo "Problem downloading the archive."; abort; } fi
 
 # extract distribution
 command -v tar >/dev/null 2>&1 || { echo >&2 "ERROR: 'tar' is not installed."; abort; }
-out=`tar -zxvf config.tgz`
+out=`tar -zxvf dot.tgz`
 if [ $? -ne 0 ]; then { echo "Problem extracting the archive."; abort; } fi
 
 # remove the archive
-rm -f config.tgz
+rm -f dot.tgz
 
 # backup old dot files
 mkdir backup/
