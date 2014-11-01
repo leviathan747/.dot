@@ -4,7 +4,7 @@
 # Good for machines without git installed or one time use situations
 
 # variables
-INSTALL_DIR='dot-test/'
+INSTALL_DIR='.dot/'
 
 # Abort cleanup function
 abort() {
@@ -26,7 +26,7 @@ cd ${INSTALL_DIR}
 
 # download distribution
 command -v wget >/dev/null 2>&1 || { echo >&2 "ERROR: 'wget' is not installed."; abort; }
-out=`wget http://levistarrett.com/.dot/config.tgz`
+out=`wget http://levistarrett.com/.dot/dot.tgz`
 if [ $? -ne 0 ]; then { echo "Problem downloading the archive."; abort; } fi
 
 # extract distribution
