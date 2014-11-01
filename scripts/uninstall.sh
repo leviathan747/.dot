@@ -20,8 +20,4 @@ mv ${INSTALL_DIR}/backup/.vimrc ~
 mv ${INSTALL_DIR}/backup/.gitconfig ~
 mv ${INSTALL_DIR}/backup/.vim ~
 
-# source profile and bashrc
-. ./.profile
-. ./.bashrc
-
 echo Uninstall finished.
