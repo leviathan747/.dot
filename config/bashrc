@@ -24,9 +24,6 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -113,10 +110,10 @@ alias vi='vim'
 alias please='sudo'
 
 # .dot setup
-alias bashrc='vim ~/.dot/config/bashrc'
-alias profile='vim ~/.dot/config/profile'
-alias vimrc='vim ~/.dot/config/vimrc'
-alias gitconfig='vim ~/.dot/config/gitconfig'
+alias bashrc='vim ~/.bashrc'
+alias profile='vim ~/.profile'
+alias vimrc='vim ~/.vimrc'
+alias gitconfig='vim ~/.gitconfig'
 
 # Add android sdk to PATH
 export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/tools
