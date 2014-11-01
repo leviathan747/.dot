@@ -49,8 +49,4 @@ ln -s ${INSTALL_DIR}/config/gitconfig .gitconfig
 ln -s ${INSTALL_DIR}/config/vim .vim
 ln -s ${INSTALL_DIR}/config/vimrc .vimrc
 
-# source bashrc and profile
-source ~/.bashrc
-source ~/.profile
-
 echo Install complete.
