@@ -21,7 +21,7 @@ cd ${INSTALL_DIR}
 bash scripts/package.sh
 
 # commit to master
-git add config/ dist/
+git add config/ dist/ scripts/
 [ $? -eq 0 ] || abort
 git commit -m "$1"
 [ $? -eq 0 ] || abort
