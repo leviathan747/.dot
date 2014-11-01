@@ -4,8 +4,14 @@
 # variables
 INSTALL_DIR='.dot/'
 
+# abort function
+abort() {
+    echo Aborting...
+    exit 1
+}
+
 # check argument
-[ $# -eq 1 ] || { echo Wrong number of arguments. Aborting...; exit 1 }
+[ $# -eq 1 ] || abort
 
 # change directories
 cd
