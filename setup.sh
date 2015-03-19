@@ -13,9 +13,9 @@ if [ $# -gt 1 ]; then
     exit 1
 elif [ $# -eq 0 ]; then
     ACTION="INSTALL"
-elif [ $1 -eq "uninstall" ]; then
+elif [ $1 == "uninstall" ]; then
     ACTION="UNINSTALL"
-elif [ $1 -eq "update" ]; then
+elif [ $1 == "update" ]; then
     ACTION="UPDATE"
 else
     echo "-dot: ERROR: Unrecognized command"
@@ -27,9 +27,20 @@ if [ $ACTION == "INSTALL" ]; then
     echo "-dot: Installing dot files..."
 
     # Clone git repo
-    echo "-dot: Cloning git repo..."
     cd ~
-    [ -d .dot ] && rm -rf .dot >> ~/.dot.log 2>&1
+    if [ -d ~/.dot ]; then
+        cd ~/.dot
+        OVERWRITE="y"
+        if [ -n "$(git status --porcelain)" ]; then
+            echo "-dot: There are unsaved changes to your dot files. Overwrite? [y/n]"
+            read -n 1 OVERWRITE
+        fi
+	cd ~
+        [ $OVERWRITE == "y" ] && rm -rf ~/.dot >> ~/.dot.log 2>&1
+    fi
+    [ -d ~/.dot ] && exit 1
+
+    echo "-dot: Cloning git repo..."
     git clone git@github.com:leviathan747/.dot.git >> ~/.dot.log 2>&1
     if [ $? -ne 0 ]; then
         echo "-dot: ERROR: Git clone failed. See full log in ~/.dot.log"
@@ -72,10 +83,6 @@ if [ $ACTION == "INSTALL" ]; then
     git submodule init >> ~/.dot.log 2>&1
     git submodule update >> ~/.dot.log 2>&1
 
-    # Source bashrc
-    echo "-dot: Sourcing bashrc..."
-    . ~/.bashrc >> ~/.dot.log 2>&1
-
     echo "-dot: Done."
 
 # UNINSTALL
@@ -99,15 +106,6 @@ elif [ $ACTION == "UNINSTALL" ]; then
     cd ~
     rm -rf .dot
 
-    # Source bashrc
-    echo "-dot: Sourcing bashrc..."
-    . ~/.bashrc >> ~/.dot.log 2>&1
-
     echo "-dot: Done."
-
-elif [ $ACTION == "UPADTE" ]; then
-
-    # Source bashrc
-    . ~/.bashrc >> ~/.dot.log 2>&1
 
 fi
