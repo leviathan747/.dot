@@ -26,17 +26,21 @@ if [ $ACTION == "INSTALL" ]; then
 
     echo "-dot: Installing dot files..."
 
+    # Clone git repo
+    echo "-dot: Cloning git repo..."
     cd ~
     [ -d .dot ] && rm -rf .dot >> ~/.dot.log 2>&1
     git clone git@github.com:leviathan747/.dot.git >> ~/.dot.log 2>&1
     if [ $? -ne 0 ]; then
-        echo "-dot: ERROR: Git clone failed. See full log in ~/dot.log"
+        echo "-dot: ERROR: Git clone failed. See full log in ~/.dot.log"
         exit 1
     fi
 
     cd ~/.dot/
+    chmod +x setup.sh
 
     # Make backups
+    echo "-dot: Making backups..."
     [ -d backup ] && rm -rf backup >> ~/.dot.log 2>&1
     mkdir backup
 
@@ -53,6 +57,7 @@ if [ $ACTION == "INSTALL" ]; then
     rm -rf ~/.bash_aliases ~/.bashlinux ~/.bashmac ~/.bashrc ~/.gitconfig ~/.gitignore ~/.vimrc ~/.vim >> ~/.dot.log 2>&1
 
     # Link files
+    echo "-dot: Linking config files..."
     ln -s ~/.dot/config/bash_aliases ~/.bash_aliases >> ~/.dot.log 2>&1
     ln -s ~/.dot/config/bashlinux ~/.bashlinux >> ~/.dot.log 2>&1
     ln -s ~/.dot/config/bashmac ~/.bashmac >> ~/.dot.log 2>&1
@@ -63,12 +68,46 @@ if [ $ACTION == "INSTALL" ]; then
     ln -s ~/.dot/config/vim ~/.vim >> ~/.dot.log 2>&1
 
     # Pull down submodules
+    echo "-dot: Updating submodules..."
     git submodule init >> ~/.dot.log 2>&1
     git submodule update >> ~/.dot.log 2>&1
 
     # Source bashrc
+    echo "-dot: Sourcing bashrc..."
     . ~/.bashrc >> ~/.dot.log 2>&1
 
     echo "-dot: Done."
+
+# UNINSTALL
+elif [ $ACTION == "UNINSTALL" ]; then
+
+    echo "-dot: Uninstalling dot files..."
+
+    # Replace backups
+    echo "-dot: Replacing backup files..."
+    cp -f ~/.dot/backup/bash_aliases ~/.bash_aliases >> ~/.dot.log 2>&1
+    cp -f ~/.dot/backup/bashlinux ~/.bashlinux >> ~/.dot.log 2>&1
+    cp -f ~/.dot/backup/bashmac ~/.bashmac >> ~/.dot.log 2>&1
+    cp -f ~/.dot/backup/bashrc ~/.bashrc >> ~/.dot.log 2>&1
+    cp -f ~/.dot/backup/gitconfig ~/.gitconfig >> ~/.dot.log 2>&1
+    cp -f ~/.dot/backup/gitignore ~/.gitignore >> ~/.dot.log 2>&1
+    cp -f ~/.dot/backup/vimrc ~/.vimrc >> ~/.dot.log 2>&1
+    cp -rf ~/.dot/backup/vim ~/.vim >> ~/.dot.log 2>&1
+
+    # Remove git repo
+    echo "-dot: Removing git repo..."
+    cd ~
+    rm -rf .dot
+
+    # Source bashrc
+    echo "-dot: Sourcing bashrc..."
+    . ~/.bashrc >> ~/.dot.log 2>&1
+
+    echo "-dot: Done."
+
+elif [ $ACTION == "UPADTE" ]; then
+
+    # Source bashrc
+    . ~/.bashrc >> ~/.dot.log 2>&1
 
 fi
