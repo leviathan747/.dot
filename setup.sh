@@ -59,13 +59,14 @@ if [ $ACTION == "INSTALL" ]; then
     [ -f ~/.bashlinux ] && cp -f ~/.bashlinux backup/bashlinux >> ~/.dot.log 2>&1
     [ -f ~/.bashmac ] && cp -f ~/.bashmac backup/bashmac >> ~/.dot.log 2>&1
     [ -f ~/.bashrc ] && cp -f ~/.bashrc backup/bashrc >> ~/.dot.log 2>&1
+    [ -f ~/.profile ] && cp -f ~/.profile backup/profile >> ~/.dot.log 2>&1
     [ -f ~/.gitconfig ] && cp -f ~/.gitconfig backup/gitconfig >> ~/.dot.log 2>&1
     [ -f ~/.gitignore ] && cp -f ~/.gitignore backup/gitignore >> ~/.dot.log 2>&1
     [ -f ~/.vimrc ] && cp -f ~/.vimrc backup/vimrc >> ~/.dot.log 2>&1
     [ -d ~/.vim ] && cp -rf ~/.vim backup/vim >> ~/.dot.log 2>&1
 
     # remove old files
-    rm -rf ~/.bash_aliases ~/.bashlinux ~/.bashmac ~/.bashrc ~/.gitconfig ~/.gitignore ~/.vimrc ~/.vim >> ~/.dot.log 2>&1
+    rm -rf ~/.bash_aliases ~/.bashlinux ~/.bashmac ~/.bashrc ~/.profile ~/.gitconfig ~/.gitignore ~/.vimrc ~/.vim >> ~/.dot.log 2>&1
 
     # Link files
     echo "-dot: Linking config files..."
@@ -73,6 +74,7 @@ if [ $ACTION == "INSTALL" ]; then
     ln -s ~/.dot/config/bashlinux ~/.bashlinux >> ~/.dot.log 2>&1
     ln -s ~/.dot/config/bashmac ~/.bashmac >> ~/.dot.log 2>&1
     ln -s ~/.dot/config/bashrc ~/.bashrc >> ~/.dot.log 2>&1
+    ln -s ~/.dot/config/profile ~/.profile >> ~/.dot.log 2>&1
     ln -s ~/.dot/config/gitconfig ~/.gitconfig >> ~/.dot.log 2>&1
     ln -s ~/.dot/config/gitignore ~/.gitignore >> ~/.dot.log 2>&1
     ln -s ~/.dot/config/vimrc ~/.vimrc >> ~/.dot.log 2>&1
@@ -96,6 +98,7 @@ elif [ $ACTION == "UNINSTALL" ]; then
     [ -f ~/.dot/backup/bashlinux ] && rm -f ~/.bashlinux && cp -f ~/.dot/backup/bashlinux ~/.bashlinux >> ~/.dot.log 2>&1
     [ -f ~/.dot/backup/bashmac ] && rm -f ~/.bashmac && cp -f ~/.dot/backup/bashmac ~/.bashmac >> ~/.dot.log 2>&1
     [ -f ~/.dot/backup/bashrc ] && rm -f ~/.bashrc && cp -f ~/.dot/backup/bashrc ~/.bashrc >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/profile ] && rm -f ~/.profile && cp -f ~/.dot/backup/profile ~/.profile >> ~/.dot.log 2>&1
     [ -f ~/.dot/backup/gitconfig ] && rm -f ~/.gitconfig && cp -f ~/.dot/backup/gitconfig ~/.gitconfig >> ~/.dot.log 2>&1
     [ -f ~/.dot/backup/gitignore ] && rm -f ~/.gitignore && cp -f ~/.dot/backup/gitignore ~/.gitignore >> ~/.dot.log 2>&1
     [ -f ~/.dot/backup/vimrc ] && rm -f ~/.vimrc && cp -f ~/.dot/backup/vimrc ~/.vimrc >> ~/.dot.log 2>&1
@@ -104,7 +107,7 @@ elif [ $ACTION == "UNINSTALL" ]; then
     # Remove git repo
     echo "-dot: Removing git repo..."
     cd ~
-    rm -rf .dot
+    rm -rf ~/.dot
 
     echo "-dot: Done."
 
