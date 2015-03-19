@@ -1,4 +1,4 @@
-set nocompatible        " Use Vim defaults instead of 100% vi compatibility
+set nocompatible                " Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start  " more powerful backspacing
 
 " set up pathogen.vim
@@ -19,7 +19,7 @@ set number
 "colors darkblue
 "let highlight_function_name = 1
 
-" my mappings
+" my mappings for window/tab control
 map J :5winc +<CR>
 map K :5winc -<CR>
 map tn :tabe<CR>

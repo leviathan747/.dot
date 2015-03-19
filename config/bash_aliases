@@ -1,0 +1,25 @@
+# Aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias ls='ls -CFG'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias rm='rm -ri'
+alias cp='cp -ri'
+alias mv='mv -i'
+alias h='history'
+alias vi='vim'
+alias please='sudo'
+
+# .dot setup aliases
+alias bashrc='vim ~/.bashrc'
+alias bashmac='vim ~/.bashmac'
+alias bashlinux='vim ~/.bashlinux'
+alias bashaliases='vim ~/.bash_aliases'
+alias profile='vim ~/.profile'
+alias vimrc='vim ~/.vimrc'
+alias gitconfig='vim ~/.gitconfig'
+alias gitignore='vim ~/.gitignore'
