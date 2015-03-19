@@ -66,3 +66,6 @@ if [ $OPNAME == "Darwin" ] && [ -f ~/.bashmac ]; then
 elif [ $OPNAME == "Linux" ] && [ -f ~/.bashlinux ]; then
     . ~/.bashlinux
 fi
+
+# Set language to UTF-8
+export LANG="en_US.UTF-8"
