@@ -92,14 +92,14 @@ elif [ $ACTION == "UNINSTALL" ]; then
 
     # Replace backups
     echo "-dot: Replacing backup files..."
-    cp -f ~/.dot/backup/bash_aliases ~/.bash_aliases >> ~/.dot.log 2>&1
-    cp -f ~/.dot/backup/bashlinux ~/.bashlinux >> ~/.dot.log 2>&1
-    cp -f ~/.dot/backup/bashmac ~/.bashmac >> ~/.dot.log 2>&1
-    cp -f ~/.dot/backup/bashrc ~/.bashrc >> ~/.dot.log 2>&1
-    cp -f ~/.dot/backup/gitconfig ~/.gitconfig >> ~/.dot.log 2>&1
-    cp -f ~/.dot/backup/gitignore ~/.gitignore >> ~/.dot.log 2>&1
-    cp -f ~/.dot/backup/vimrc ~/.vimrc >> ~/.dot.log 2>&1
-    cp -rf ~/.dot/backup/vim ~/.vim >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/bash_aliases ] && rm -f ~/.bash_aliases && cp -f ~/.dot/backup/bash_aliases ~/.bash_aliases >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/bashlinux ] && rm -f ~/.bashlinux && cp -f ~/.dot/backup/bashlinux ~/.bashlinux >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/bashmac ] && rm -f ~/.bashmac && cp -f ~/.dot/backup/bashmac ~/.bashmac >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/bashrc ] && rm -f ~/.bashrc && cp -f ~/.dot/backup/bashrc ~/.bashrc >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/gitconfig ] && rm -f ~/.gitconfig && cp -f ~/.dot/backup/gitconfig ~/.gitconfig >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/gitignore ] && rm -f ~/.gitignore && cp -f ~/.dot/backup/gitignore ~/.gitignore >> ~/.dot.log 2>&1
+    [ -f ~/.dot/backup/vimrc ] && rm -f ~/.vimrc && cp -f ~/.dot/backup/vimrc ~/.vimrc >> ~/.dot.log 2>&1
+    [ -d ~/.dot/backup/vim ] && rm -rf ~/.vim && cp -rf ~/.dot/backup/vim ~/.vim >> ~/.dot.log 2>&1
 
     # Remove git repo
     echo "-dot: Removing git repo..."
