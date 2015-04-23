@@ -14,6 +14,8 @@ alias h='history'
 alias vi='vim'
 alias please='sudo'
 
+alias sql='mysql -u root -plevistarrett'
+
 # .dot setup aliases
 alias bashrc='vim ~/.bashrc'
 alias bashmac='vim ~/.bashmac'

@@ -1,8 +1,8 @@
 # MAC specific bashrc
 
 # Add android sdk to PATH
-export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/tools
-export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
+export PATH=${PATH}:~/Library/Android/sdk/tools
+export PATH=${PATH}:~/Library/Android/sdk/platform-tools
 
 # Add mysql to PATH
 export PATH=$PATH:/usr/local/mysql/bin/
