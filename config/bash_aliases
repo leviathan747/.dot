@@ -14,6 +14,8 @@ alias h='history'
 alias vi='vim'
 alias please='sudo'
 
+alias serve='python -m SimpleHTTPServer 8080'
+
 alias sql='mysql -u root -plevistarrett'
 
 # .dot setup aliases

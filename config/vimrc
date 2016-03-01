@@ -22,17 +22,23 @@ set number
 " my mappings for window/tab control
 map J :5winc +<CR>
 map K :5winc -<CR>
-map tn :tabe<CR>
+map Tn :tabe<CR>
 map th :tabn<CR>
 map tp :tabp<CR>
-map nt :NERDTreeToggle<CR>
+map tn :NERDTreeToggle<CR>
 map <Tab> <C-w>w
 map zz <C-z>
 
+" jump to last location
+noremap gl <C-O>
+
+" search for visually selected text
+vnoremap // y/<C-R>"<CR>
+
 " FUZZYFINDER stuff
-noremap <silent><C-f> :FufFile<CR>
-noremap <silent><C-g> :FufDir<CR>
-noremap <silent><C-b> :FufBuffer<CR>
+"noremap <silent><C-f> :FufFile<CR>
+"noremap <silent><C-g> :FufDir<CR>
+"noremap <silent><C-b> :FufBuffer<CR>
 
 let NERDTreeIgnore = ['\.pyc$']
 "let NERDTreeIgnore += ['\.class$']
