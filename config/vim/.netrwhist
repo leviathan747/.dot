@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/levistarrett/git/xtuml/bridgepoint/src/masl_parser/build'
-let g:netrw_dirhist_2='/Users/levistarrett/git/xtuml/mc/masl'
-let g:netrw_dirhist_3='/Users/levistarrett/xtuml/runtime-EclipseApplication/GPS Watch'
