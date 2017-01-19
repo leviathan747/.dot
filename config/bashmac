@@ -5,4 +5,4 @@ export PATH=${PATH}:~/Library/Android/sdk/tools
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools
 
 # Add mysql to PATH
-export PATH=$PATH:/usr/local/mysql/bin/
+export PATH=$PATH:/usr/local/mysql/bin

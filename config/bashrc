@@ -51,7 +51,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Add user /bin dir to path
-export PATH=$PATH:~/bin/
+export PATH=$PATH:/usr/local/sbin:~/bin
 
 # Ignore case in tab completion
 set completion-ignore-case on

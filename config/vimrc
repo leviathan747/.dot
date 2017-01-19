@@ -36,15 +36,20 @@ noremap gl <C-O>
 vnoremap // y/<C-R>"<CR>
 
 " FUZZYFINDER stuff
-"noremap <silent><C-f> :FufFile<CR>
-"noremap <silent><C-g> :FufDir<CR>
-"noremap <silent><C-b> :FufBuffer<CR>
+let g:fuf_modesDisable = []
+noremap ff :FufFile<CR>
+noremap fs :FufMruFile<CR>
 
 let NERDTreeIgnore = ['\.pyc$']
 "let NERDTreeIgnore += ['\.class$']
 
 " render ejs as html
 au BufNewFile,BufRead *.ejs set filetype=html
+
+highlight DiffChange ctermfg=white
+highlight DiffText ctermfg=white
+
+"set diffopt=context:1
 
 if has ("autocmd")
     " set wrap for emails at 70, but source code doesn't wrap

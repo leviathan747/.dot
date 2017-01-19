@@ -1,2 +1,5 @@
 *.swp
 backup/
+LOGFILE
+.hg/
+.netrwhist
