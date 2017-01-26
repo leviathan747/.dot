@@ -18,6 +18,8 @@ alias serve='python -m SimpleHTTPServer 8080'
 
 alias sql='mysql -u root -plevistarrett'
 
+alias git-ssh-gen='ssh-keygen -t rsa -b 4096 -C "levi@roxsoftware.com"'
+
 # .dot setup aliases
 alias bashrc='vim ~/.bashrc'
 alias bashmac='vim ~/.bashmac'
