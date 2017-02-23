@@ -21,7 +21,9 @@
     dt = difftool --tool=vimdiff
     dts = difftool --tool=vimdiff --staged
     cl = clean -df
+    cll = clean -dxf
 [core]
     excludesfile = ~/.gitignore
+    filemode = false
 [push]
     default = simple
