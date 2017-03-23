@@ -22,6 +22,7 @@
     dts = difftool --tool=vimdiff --staged
     cl = clean -df
     cll = clean -dxf
+    filelist = diff --stat=300 up/master
 [core]
     excludesfile = ~/.gitignore
     filemode = false

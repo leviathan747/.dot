@@ -7,9 +7,8 @@ export PATH=${PATH}:~/Library/Android/sdk/platform-tools
 # Add mysql to PATH
 export PATH=$PATH:/usr/local/mysql/bin
 
-# Add BP tools to PATH
-export BPMAC=/Users/levistarrett/xtuml/m586/Eclipse.app/Contents/Eclipse
-export PATH=$PATH:$BPMAC/tools/mc/bin
+# java home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 
 # alias for virtualbox
 alias vb='VboxManage'
