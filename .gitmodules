@@ -1,3 +1,6 @@
 [submodule "config/vim/bundle/nerdtree"]
 	path = config/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "config/vim/bundle/vim-fugitive"]
+	path = config/vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

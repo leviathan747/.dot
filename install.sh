@@ -47,5 +47,6 @@ ln -s ~/.dot/config/vim ~/.vim >> LOGFILE 2>&1
 echo "-dot: Updating submodules..."
 git submodule init >> LOGFILE 2>&1
 git submodule update >> LOGFILE 2>&1
+git submodule foreach git pull origin master >> LOGFILE 2>&1
 
 echo "-dot: Done."
