@@ -69,3 +69,10 @@ fi
 
 # Set language to UTF-8
 export LANG="en_US.UTF-8"
+
+# source include files
+if [ -d ~/.bash_include ]; then
+    for f in ~/.bash_include/*; do
+        . $f
+    done
+fi

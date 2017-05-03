@@ -12,3 +12,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 
 # alias for virtualbox
 alias vb='VboxManage'
+
+# source BP vars
+source /Users/levi/xtuml/BP.info

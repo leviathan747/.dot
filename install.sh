@@ -37,7 +37,7 @@ ln -s ~/.dot/config/bash_aliases ~/.bash_aliases >> LOGFILE 2>&1
 ln -s ~/.dot/config/bashlinux ~/.bashlinux >> LOGFILE 2>&1
 ln -s ~/.dot/config/bashmac ~/.bashmac >> LOGFILE 2>&1
 ln -s ~/.dot/config/bashrc ~/.bashrc >> LOGFILE 2>&1
-ln -s ~/.dot/config/profile ~/.profile >> LOGFILE 2>&1
+ln -s ~/.dot/config/bashrc ~/.profile >> LOGFILE 2>&1
 ln -s ~/.dot/config/gitconfig ~/.gitconfig >> LOGFILE 2>&1
 ln -s ~/.dot/config/gitignore ~/.gitignore >> LOGFILE 2>&1
 ln -s ~/.dot/config/vimrc ~/.vimrc >> LOGFILE 2>&1

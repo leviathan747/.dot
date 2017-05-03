@@ -20,6 +20,8 @@ set expandtab
 " my mappings for window/tab control
 map J :5winc +<CR>
 map K :5winc -<CR>
+map H :vertical resize +5<CR>
+map L :vertical resize -5<CR>
 map Tn :tabe<CR>
 map th :tabn<CR>
 map tp :tabp<CR>
