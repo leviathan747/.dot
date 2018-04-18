@@ -26,7 +26,7 @@
 [core]
     excludesfile = ~/.gitignore
     filemode = false
-	editor = /usr/bin/vim
+	  editor = /usr/bin/vim
 [push]
     default = simple
 [credential]

@@ -15,6 +15,3 @@ alias vb='VboxManage'
 alias bpon='VboxManage startvm bp --type headless'
 alias bponui='VboxManage startvm bp'
 alias bpoff='VboxManage controlvm bp poweroff'
-
-# source BP vars
-source /Users/levi/xtuml/BP.info
