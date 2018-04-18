@@ -13,8 +13,8 @@ set background=dark
 set hlsearch
 set number
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " my mappings for window/tab control
@@ -81,3 +81,11 @@ endif
 
 " make space get rid of highlighting
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+
+" function for note writing
+function EngNote()
+  :set sw=2
+  :set spell
+  :execute "normal /  $\<CR>"
+endfunction
+

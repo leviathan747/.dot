@@ -12,6 +12,9 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 
 # alias for virtualbox
 alias vb='VboxManage'
+alias bpon='VboxManage startvm bp --type headless'
+alias bponui='VboxManage startvm bp'
+alias bpoff='VboxManage controlvm bp poweroff'
 
 # source BP vars
 source /Users/levi/xtuml/BP.info
