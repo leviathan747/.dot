@@ -5,7 +5,7 @@ set backspace=indent,eol,start  " more powerful backspacing
 execute pathogen#infect()
 
 syntax on
-set visualbell
+set novisualbell
 set smartindent
 set nobackup
 set ruler
