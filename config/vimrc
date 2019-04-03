@@ -6,6 +6,10 @@ execute pathogen#infect()
 
 " jedi setup
 autocmd FileType python setlocal completeopt-=preview
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#use_splits_not_buffers = "top"
+let g:jedi#smart_auto_mappings = 0
 
 syntax on
 set novisualbell
@@ -37,11 +41,6 @@ noremap gl <C-O>
 
 " search for visually selected text
 vnoremap // y/<C-R>"<CR>
-
-" FUZZYFINDER stuff
-let g:fuf_modesDisable = []
-noremap ff :FufFile<CR>
-noremap fs :FufMruFile<CR>
 
 let NERDTreeIgnore = ['\.pyc$']
 "let NERDTreeIgnore += ['\.class$']

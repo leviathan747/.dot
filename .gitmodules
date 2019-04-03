@@ -4,18 +4,6 @@
 [submodule "config/vim/bundle/vim-fugitive"]
 	path = config/vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "config/vim/bundle/tlib_vim"]
-	path = config/vim/bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "config/vim/bundle/vim-addon-mw-utils"]
-	path = config/vim/bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "config/vim/bundle/vim-snipmate"]
-	path = config/vim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "config/vim/bundle/vim-snippets"]
-	path = config/vim/bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "config/vim/bundle/jedi-vim"]
 	path = config/vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
