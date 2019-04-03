@@ -6,10 +6,11 @@ execute pathogen#infect()
 
 " jedi setup
 autocmd FileType python setlocal completeopt-=preview
+let g:jedi#completions_command = "<tab>"
 let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
 let g:jedi#use_splits_not_buffers = "top"
 let g:jedi#smart_auto_mappings = 0
+"let g:SuperTabDefaultCompletionType = "context"
 
 syntax on
 set novisualbell
