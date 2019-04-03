@@ -16,3 +16,6 @@
 [submodule "config/vim/bundle/vim-snippets"]
 	path = config/vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "config/vim/bundle/jedi-vim"]
+	path = config/vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git

@@ -4,6 +4,9 @@ set backspace=indent,eol,start  " more powerful backspacing
 " set up pathogen.vim
 execute pathogen#infect()
 
+" jedi setup
+autocmd FileType python setlocal completeopt-=preview
+
 syntax on
 set novisualbell
 set smartindent
