@@ -71,7 +71,10 @@ fi
 export LANG="en_US.UTF-8"
 
 # source BP vars
-source $HOME/xtuml/BP.info
+stat $HOME/xtuml/BP.info &> /dev/null
+if [[ 0 == $? ]]; then
+  source $HOME/xtuml/BP.info
+fi
 
 # source include files
 if [ -d ~/.bash_include ]; then
