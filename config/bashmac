@@ -15,3 +15,9 @@ alias vb='VboxManage'
 alias bpon='VboxManage startvm bp --type headless'
 alias bponui='VboxManage startvm bp'
 alias bpoff='VboxManage controlvm bp poweroff'
+alias roson='VboxManage startvm ros --type headless'
+alias rosonui='VboxManage startvm ros'
+alias rosoff='VboxManage controlvm ros poweroff'
+
+# alias for opening files in Firefox
+alias firefox='open -a Firefox'
