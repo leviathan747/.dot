@@ -1,5 +1,2 @@
-*.swp
-backup/
-LOGFILE
-.hg/
-.netrwhist
+dot.log
+plugged/

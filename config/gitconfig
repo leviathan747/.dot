@@ -5,9 +5,12 @@
     tool = vimdiff
 [diff]
     tool = vimdiff
+[difftool "vimdiff"]
+    cmd = "vimdiff -c 'set diffopt+=iwhite' \"$LOCAL\" \"$REMOTE\""
 [alias]
     st = status
-    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' -10
+    stt = status .
+    lg = !git --no-pager log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' -10
     llg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     alg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     co = checkout
@@ -19,16 +22,33 @@
     c = commit -m
     ca = commit --amend
     m = merge
-    dt = difftool
+    dt = difftool -b
     dts = difftool --staged
     cl = clean -df
     cll = clean -dxf
     filelist = diff --stat=300 up/master
+    pu = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+    pf = git push -f
+    sh = stash push -u -m
+    sp = stash pop
+    sl = stash list
 [core]
     excludesfile = ~/.gitignore
     filemode = false
-	  editor = /usr/bin/vim
+    editor = vim
 [push]
     default = simple
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+[http]
+    postBuffer = 500M
+    maxRequestBuffer = 100M
+[pull]
+    rebase = false
+[init]
+    defaultBranch = main

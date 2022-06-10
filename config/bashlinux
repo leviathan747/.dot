@@ -1,3 +1,0 @@
-# LINUX specific bashrc
-
-alias ls='ls -CF --color=auto'
