@@ -15,9 +15,9 @@ rm -rf $HOME/.zshrc \
 
 # Link files
 echo "-dot: Installing dot files..."
-ln -Fs $HOME~/.dot/config/zshrc     $HOME/.zshrc
-ln -Fs $HOME~/.dot/config/gitconfig $HOME/.gitconfig
-ln -Fs $HOME~/.dot/config/gitignore $HOME/.gitignore
-ln -Fs $HOME~/.dot/config/nvim      $HOME/.config/nvim
+ln -Fs $HOME/.dot/config/zshrc     $HOME/.zshrc
+ln -Fs $HOME/.dot/config/gitconfig $HOME/.gitconfig
+ln -Fs $HOME/.dot/config/gitignore $HOME/.gitignore
+ln -Fs $HOME/.dot/config/nvim      $HOME/.config/nvim
 
 echo "-dot: Done."
