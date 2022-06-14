@@ -11,6 +11,8 @@ alias masl-compiler="docker run --rm -v \$PWD:/root levistarrett/masl-compiler"
 alias masl-exe="docker run -it --rm -p 20000:20000 -p 30000:30000 -p 40000:40000 -v \$PWD:/root levistarrett/masl-exe"
 alias mkdir="mkdir -p"
 alias vim=nvim
+alias vi=nvim
+alias vimdiff="nvim -d"
 
 # configure pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -21,15 +23,9 @@ fi
 BPHOME_MAC=/Applications/BridgePoint.app/Contents/Eclipse/ && stat $BPHOME_MAC &> /dev/null && export BPHOME=$BPHOME_MAC  # mac
 BPHOME_LINUX=/opt/xtuml/BridgePoint/ && stat $BPHOME_LINUX &> /dev/null && export BPHOME=$BPHOME_LINUX                    # linux
 
-# configure NVM (Node Version Manager)
-export NVM_DIR=$HOME/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # additional PATH locations
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$BPHOME/tools/mc/bin
 
 # source local configuration
 test -f $HOME/.zshlocal && source $HOME/.zshlocal
-
-CLI

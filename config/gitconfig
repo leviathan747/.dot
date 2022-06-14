@@ -1,12 +1,10 @@
 [user]
     email = levi@roxsoftware.com
     name = Levi Starrett
-[merge]
-    tool = vimdiff
 [diff]
-    tool = vimdiff
-[difftool "vimdiff"]
-    cmd = "vimdiff -c 'set diffopt+=iwhite' \"$LOCAL\" \"$REMOTE\""
+    tool = nvim
+[difftool "nvim"]
+    cmd = "nvim -d -c 'set diffopt+=iwhite' \"$LOCAL\" \"$REMOTE\""
 [alias]
     st = status
     stt = status .
@@ -35,7 +33,7 @@
 [core]
     excludesfile = ~/.gitignore
     filemode = false
-    editor = vim
+    editor = nvim
 [push]
     default = simple
 [credential]
